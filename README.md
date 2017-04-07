@@ -21,6 +21,7 @@
    #如果不通过开发工具部署到tomcat，请将项目打成war包的方式，将war包放在tomcat/webapp下进行启动  
    
    jetty 启动端口可在pom文件进行个人需要进行修改 127.0.0.1:jetty启动端口/CMS  jetty默认配置8080
+   
    其他启动服务 自行尝试
   
 如有其他问题可邮箱骚扰~ yuankz888@gmail.com  
