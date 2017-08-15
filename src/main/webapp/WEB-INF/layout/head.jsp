@@ -34,9 +34,12 @@
             <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-all"></use>
             </svg>
-            <div class="name">首页</div>
+            <div class="name">点击查看以获取邮箱的邮件,<span>当前渗透账户leo@nj-gh.com</span></div>
+
         </a>
+
     </div>
+
     <div style="float:right;width: 40%; height: 100%;white-space:nowrap;">
 
         <%--<a href="${context}/articleAdd">--%>

@@ -39,10 +39,10 @@
                                     <section class="summary">${article.mobileArticle}</section>
                                     <section class="headimg">
 
-                                        <c:if test="${'' != article.image}">
-                                        <img src="${context}/uploadFile/${article.image}"
-                                             alt="${article.mobileArticle}" width="100%"></section>
-                                        </c:if>
+                                        <%--<c:if test="${'' != article.image}">--%>
+                                        <%--<img src="${context}/uploadFile/${article.image}"--%>
+                                             <%--alt="${article.mobileArticle}" width="100%"></section>--%>
+                                        <%--</c:if>--%>
 
                                     <div>
                                             ${article.info}
@@ -51,11 +51,11 @@
                             </div>
                         </div>
 
-                        <div class="common-post-like-wrapper"  align="center">
-                            <a class="post-pc-like edit" href="${context}/articleUpdate?id=${article.id}">
-                                <div class="name">编辑</div>
-                            </a>
-                        </div>
+                        <%--<div class="common-post-like-wrapper"  align="center">--%>
+                            <%--<a class="post-pc-like edit" href="${context}/articleUpdate?id=${article.id}">--%>
+                                <%--<div class="name">编辑</div>--%>
+                            <%--</a>--%>
+                        <%--</div>--%>
                     </div>
                 </div>
             </div>

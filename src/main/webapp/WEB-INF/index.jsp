@@ -41,15 +41,15 @@
                     <a href="${context}/articleDetail?id=${article.id}" target="_blank">
                         <div class="am-cf inner_li inner_li_abtest">
 
-                            <div class="img_box">
-                                <c:if test="${'' == article.image || null == article.image}">
-                                    <img src="${context}/image/0852484FK.jpg" width="100%">
-                                </c:if>
-                                <c:if test="${'' != article.image || null != article.image}">
-                                    <img src="${context}/uploadFile/${article.image}" width="100%">
-                                </c:if>
+                            <%--<div class="img_box">--%>
+                                <%--<c:if test="${'' == article.image || null == article.image}">--%>
+                                    <%--<img src="${context}/image/0852484FK.jpg" width="100%">--%>
+                                <%--</c:if>--%>
+                                <%--<c:if test="${'' != article.image || null != article.image}">--%>
+                                    <%--<img src="${context}/uploadFile/${article.image}" width="100%">--%>
+                                <%--</c:if>--%>
 
-                            </div>
+                            <%--</div>--%>
                             <div class="intro">
                                 <h3>
                                     <a href="${context}/articleDetail?id=${article.id}" target="_blank"

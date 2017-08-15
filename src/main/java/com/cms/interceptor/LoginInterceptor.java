@@ -1,15 +1,22 @@
 package com.cms.interceptor;
 
+import com.cms.entity.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 /**
  * Created by ykz on 2017/4/5.
  */
 public class LoginInterceptor implements HandlerInterceptor {
+    private static Logger logger = LoggerFactory.getLogger(LoginInterceptor.class);
+
     /**
      * preHandle方法是进行处理器拦截用的，顾名思义，该方法将在Controller处理之前进行调用，SpringMVC中的Interceptor拦截器是链式的，可以同时存在
      * 多个Interceptor，然后SpringMVC会根据声明的前后顺序一个接一个的执行，而且所有的Interceptor中的preHandle方法都会在
@@ -19,7 +26,36 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
 
+        //创建session
+        HttpSession session = request.getSession();
+
+        //无需登录，允许访问的地址
+        String[] allowUrls = new String[]{"/toLogin", "/login"};
+
+        //获取请求地址
+        String url = request.getRequestURL().toString();
+
+        //获得session中的用户
+        User user = (User) session.getAttribute("user");
+
+
+        for (String strUrl : allowUrls) {
+            if (url.contains(strUrl)) {
+                return true;
+            }
+        }
+        if (null == user) {
+
+            //重定向
+            try {
+                response.sendRedirect(request.getContextPath() + "/login");
+            } catch (IOException e) {
+                logger.error("IOException", e);
+            }
+
+        }
         return true;
+
     }
 
     /**
